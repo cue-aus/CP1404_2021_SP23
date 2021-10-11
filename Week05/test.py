@@ -45,7 +45,7 @@ def main():
     print(size_compare([], []))
     print(size_compare([1, 2], [1]))
 
-    my_list = [['a', 'b', 'cdf'], ['1', '2', '123']]
+    my_list = [['a', 'b', 'cdf'], [1, 2, '123']]
     with open('test.csv', 'w') as f:
         write = csv.writer(f)
         # write.writerow(header)
