@@ -1,0 +1,73 @@
+BoxLayout:
+    orientation: 'vertical'
+    GridLayout:
+        cols: 2
+        size_hint: 1, .3
+        Label:
+            id: AUD
+            text: 'AUD amount:'
+        TextInput:
+            text: str(app.aud_amount)
+            input_filter: 'float'
+            multiline: False
+            on_text: app.recompute1(self.text)
+        Label:
+            id: FOREIGN
+            text: 'USD amount:'
+        TextInput:
+            text: str(app.foreign_amount)
+            input_filter: 'float'
+            multiline: False
+            on_text: app.recompute2(self.text)
+    GridLayout:
+        cols: 2
+        size_hint: 1, .3
+        ToggleButton:
+            id: A
+            text: 'AUD -> FOREIGN'
+            group: 'option'
+            on_press: app.conversion_option(self)
+        ToggleButton:
+            id: F
+            text: 'FOREIGN -> AUD'
+            group: 'option'
+            on_press: app.conversion_option(self)
+            state: 'down'
+    GridLayout:
+        cols: 4
+        ToggleButton:
+            id: 0
+            group: 'countries'
+            text: app.COUNTRIES[0]
+            state: 'down'
+            on_press: app.country_option(self)
+        ToggleButton:
+            id: 1
+            group: 'countries'
+            text: app.COUNTRIES[1]
+            on_press: app.country_option(self)
+        ToggleButton:
+            id: 2
+            group: 'countries'
+            text: app.COUNTRIES[2]
+            on_press: app.country_option(self)
+        ToggleButton:
+            id: 3
+            group: 'countries'
+            text: app.COUNTRIES[3]
+            on_press: app.country_option(self)
+        ToggleButton:
+            id: 4
+            group: 'countries'
+            text: app.COUNTRIES[4]
+            on_press: app.country_option(self)
+        ToggleButton:
+            id: 5
+            group: 'countries'
+            text: app.COUNTRIES[5]
+            on_press: app.country_option(self)
+        ToggleButton:
+            id: 6
+            group: 'countries'
+            text: app.COUNTRIES[6]
+            on_press: app.country_option(self)
